@@ -20,5 +20,6 @@ export default class Acord {
       this.appears(this.dt[0]);
       this.addEventAcord();
     }
+    return this;
   }
 }
