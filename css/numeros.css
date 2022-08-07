@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700;900&display=swap');
+
+.numero-grid{
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: repeat(2 , 1fr);
+  grid-gap: 20px;
+}
+
+.numero-grid h3{
+  font-family: 'Playfair Display SC', serif;
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+.numero-grid span{
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #e54;
+}
+
+@media (max-width: 700px){
+  .numero-grid{
+    grid-column: 1;
+  }
+}
