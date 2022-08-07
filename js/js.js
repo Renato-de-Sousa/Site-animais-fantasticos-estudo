@@ -1,4 +1,4 @@
-import tabnav from "./modulo/tabNav.js";
+import Tabnav from './modulo/tabNav.js';
 import ScrollSuave from './modulo/scrollSuave.js';
 import initScroll from "./modulo/animate.js";
 import Acord from './modulo/acord.js';
@@ -16,7 +16,8 @@ scrollSuaveAt.init();
 const acordion = new Acord('[data-anima="acordion"] dt');
 acordion.init();
 
-tabnav();
+const tabNav = new Tabnav('[data-tab="menu"] li', '[data-tab="content"] section');
+tabNav.init();
 
 initScroll();
 
