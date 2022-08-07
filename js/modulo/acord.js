@@ -1,17 +1,24 @@
-export default function acord() {
-  const dt = document.querySelectorAll('[data-anima="acordion"] dt');
-
-  function appears() {
-    this.classList.toggle('ativo');
-    this.nextElementSibling.classList.toggle('ativo');
+export default class Acord {
+  constructor(list) {
+    this.dt = document.querySelectorAll(list);
+    this.active = 'ativo';
   }
 
-  if (dt.length) {
-    dt[0].classList.add('ativo');
-    dt[0].nextElementSibling.classList.add('ativo');
+  appears(item) {
+    item.classList.toggle(this.active);
+    item.nextElementSibling.classList.toggle(this.active);
+  }
 
-    dt.forEach((item) => {
-      item.addEventListener('click', appears);
+  addEventAcord() {
+    this.dt.forEach((item) => {
+      item.addEventListener('click', () => this.appears(item));
     });
+  }
+
+  init() {
+    if (this.dt.length) {
+      this.appears(this.dt[0]);
+      this.addEventAcord();
+    }
   }
 }
