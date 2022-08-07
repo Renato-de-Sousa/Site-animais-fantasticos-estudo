@@ -2,7 +2,7 @@ import Tabnav from './modulo/tabNav.js';
 import ScrollSuave from './modulo/scrollSuave.js';
 import initScroll from "./modulo/animate.js";
 import Acord from './modulo/acord.js';
-import initModal from "./modulo/modal.js";
+import Modal from './modulo/modal.js';
 import initTool from "./modulo/tooltip.js";
 import initDrop from "./modulo/drop.js";
 import initMenu from "./modulo/menuMb.js";
@@ -21,7 +21,8 @@ tabNav.init();
 
 initScroll();
 
-initModal();
+const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
+modal.init();
 initTool();
 initDrop();
 initMenu();
