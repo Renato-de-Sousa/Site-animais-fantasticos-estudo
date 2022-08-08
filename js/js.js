@@ -30,5 +30,3 @@ initMenu();
 initData();
 initAnimaisApi();
 initBit();
-
-
