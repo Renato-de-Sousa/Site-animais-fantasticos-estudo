@@ -1,4 +1,4 @@
-import animaNumeros from './animaNumero.js';
+import AnimaNumeros from './animaNumero.js';
 
 export default function initAnimaisApi() {
   function create(animal) {
@@ -18,7 +18,8 @@ export default function initAnimaisApi() {
         const divAnimal = create(animal);
         gridn.appendChild(divAnimal);
       });
-      animaNumeros();
+      const animaNumero = new AnimaNumeros('[data-numeros]', '.numeros', 'ativar');
+      animaNumero.init();
     } catch (err) {
       console.log(err);
     }
