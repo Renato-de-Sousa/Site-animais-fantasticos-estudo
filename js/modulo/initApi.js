@@ -18,7 +18,7 @@ export default function initAnimaisApi() {
         const divAnimal = create(animal);
         gridn.appendChild(divAnimal);
       });
-      const animaNumero = new AnimaNumeros('[data-numeros]', '.numeros', 'ativar');
+      const animaNumero = new AnimaNumeros('.numero-grid .numero-animal span', '.numeros', 'ativar');
       animaNumero.init();
     } catch (err) {
       console.log(err);
