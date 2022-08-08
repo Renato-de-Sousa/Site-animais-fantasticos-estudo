@@ -7,7 +7,7 @@ import ToolTip from "./modulo/tooltip.js";
 import initDrop from "./modulo/drop.js";
 import initMenu from "./modulo/menuMb.js";
 import initData from "./modulo/horario.js";
-import initAnimaisApi from "./modulo/initApi.js";
+import fetchAnimais from './modulo/initApi.js';
 import initBit from "./modulo/bitcoin.js";
 
 const scrollSuaveAt = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
@@ -30,5 +30,5 @@ tollTip.init();
 initDrop();
 initMenu();
 initData();
-initAnimaisApi();
+fetchAnimais('../../animaisApi.json', '.numero-grid');
 initBit();
