@@ -8,7 +8,7 @@ import initDrop from "./modulo/drop.js";
 import initMenu from "./modulo/menuMb.js";
 import initData from "./modulo/horario.js";
 import fetchAnimais from './modulo/initApi.js';
-import initBit from "./modulo/bitcoin.js";
+import bitcoinF from './modulo/bitcoin.js';
 
 const scrollSuaveAt = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuaveAt.init();
@@ -31,4 +31,4 @@ initDrop();
 initMenu();
 initData();
 fetchAnimais('../../animaisApi.json', '.numero-grid');
-initBit();
+bitcoinF('https://blockchain.info/ticker', '.btc-preco');
