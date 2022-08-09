@@ -19,14 +19,14 @@ acordion.init();
 const tabNav = new Tabnav('[data-tab="menu"] li', '[data-tab="content"] section');
 tabNav.init();
 
-const scrollAnima = new ScrollAnima('[data-scroll="anima"]');
-scrollAnima.init();
-
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.init();
 
 const tollTip = new ToolTip('[data-tollTip]');
 tollTip.init();
+
+const AnimaScroll = new ScrollAnima('[data-scroll="anima"]');
+AnimaScroll.init();
 
 initDrop();
 initMenu();
