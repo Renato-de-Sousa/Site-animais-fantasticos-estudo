@@ -1,6 +1,6 @@
 import Tabnav from './modulo/tabNav.js';
 import ScrollSuave from './modulo/scrollSuave.js';
-import initScroll from "./modulo/animate.js";
+import ScrollAnima from './modulo/scrollAnima.js';
 import Acord from './modulo/acord.js';
 import Modal from './modulo/modal.js';
 import ToolTip from "./modulo/tooltip.js";
@@ -19,13 +19,14 @@ acordion.init();
 const tabNav = new Tabnav('[data-tab="menu"] li', '[data-tab="content"] section');
 tabNav.init();
 
-initScroll();
-
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.init();
 
 const tollTip = new ToolTip('[data-tollTip]');
 tollTip.init();
+
+const AnimaScroll = new ScrollAnima('[data-scroll="anima"]');
+AnimaScroll.init();
 
 initDrop();
 initMenu();
