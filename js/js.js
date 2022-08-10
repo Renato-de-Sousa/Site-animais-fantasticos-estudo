@@ -10,7 +10,6 @@ import Funcionamento from './modulo/horario.js';
 import fetchAnimais from './modulo/initApi.js';
 import bitcoinF from './modulo/bitcoin.js';
 
-
 const scrollSuaveAt = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuaveAt.init();
 
