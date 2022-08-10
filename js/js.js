@@ -3,9 +3,9 @@ import ScrollSuave from './modulo/scrollSuave.js';
 import ScrollAnima from './modulo/scrollAnima.js';
 import Acord from './modulo/acord.js';
 import Modal from './modulo/modal.js';
-import ToolTip from "./modulo/tooltip.js";
+import ToolTip from './modulo/tooltip.js';
 import DropdownMenu from './modulo/drop.js';
-import initMenu from "./modulo/menuMb.js";
+import Menu from './modulo/menuMb.js';
 import initData from "./modulo/horario.js";
 import fetchAnimais from './modulo/initApi.js';
 import bitcoinF from './modulo/bitcoin.js';
@@ -32,7 +32,9 @@ AnimaScroll.init();
 const dropdown = new DropdownMenu('[data-dropdown]');
 dropdown.init();
 
-initMenu();
+const menuMb = new Menu('[data-menu="button"]', '[data-menu="list"]', ['touchstart', 'click']);
+menuMb.init();
+
 initData();
 fetchAnimais('../../animaisApi.json', '.numero-grid');
 bitcoinF('https://blockchain.info/ticker', '.btc-preco');
