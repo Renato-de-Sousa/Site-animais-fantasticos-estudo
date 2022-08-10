@@ -32,4 +32,4 @@ initDrop();
 initMenu();
 initData();
 fetchAnimais('../../animaisApi.json', '.numero-grid');
-/*bitcoinF('https://blockchain.info/ticker', '.btc-preco');*/
+bitcoinF('https://blockchain.info/ticker', '.btc-preco');
