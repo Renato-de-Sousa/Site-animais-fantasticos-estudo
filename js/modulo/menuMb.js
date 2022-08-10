@@ -1,26 +1,41 @@
 import outSideClick from './outSideClick.js';
 
-export default function initMenu() {
-  const menu = document.querySelector('[data-menu="button"]');
-  const list = document.querySelector('[data-menu="list"]');
-  const eventos = ['click', 'touchstart'];
+export default class Menu {
+  constructor(button, list, events) {
+    this.menu = document.querySelector(button);
+    this.list = document.querySelector(list);
+    this.activeClass = 'active';
+    if (events === undefined) {
+      this.events = ['touchstart', 'click'];
+    } else {
+      this.events = events;
+    }
+    this.openMenu = this.openMenu.bind(this);
+  }
 
-  function openMenu(event) {
+  openMenu(event) {
     if (event.type === 'touchstart') {
       event.preventDefault();
     }
-    menu.classList.add('active');
-    list.classList.add('active');
+    this.menu.classList.add(this.activeClass);
+    this.list.classList.add(this.activeClass);
 
-    outSideClick(list, eventos, () => {
-      menu.classList.remove('active');
-      list.classList.remove('active');
+    outSideClick(this.list, this.events, () => {
+      this.menu.classList.remove(this.activeClass);
+      this.list.classList.remove(this.activeClass);
     });
   }
 
-  if (menu) {
-    eventos.forEach((evento) => {
-      menu.addEventListener(evento, openMenu);
+  addMenuEvent() {
+    this.events.forEach((evento) => {
+      this.menu.addEventListener(evento, this.openMenu);
     });
+  }
+
+  init() {
+    if (this.menu && this.list) {
+      this.addMenuEvent();
+    }
+    return this;
   }
 }
