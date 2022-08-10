@@ -4,11 +4,12 @@ import ScrollAnima from './modulo/scrollAnima.js';
 import Acord from './modulo/acord.js';
 import Modal from './modulo/modal.js';
 import ToolTip from "./modulo/tooltip.js";
-import initDrop from "./modulo/drop.js";
+import DropdownMenu from './modulo/drop.js';
 import initMenu from "./modulo/menuMb.js";
 import initData from "./modulo/horario.js";
 import fetchAnimais from './modulo/initApi.js';
 import bitcoinF from './modulo/bitcoin.js';
+
 
 const scrollSuaveAt = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuaveAt.init();
@@ -28,7 +29,9 @@ tollTip.init();
 const AnimaScroll = new ScrollAnima('[data-scroll="anima"]');
 AnimaScroll.init();
 
-initDrop();
+const dropdown = new DropdownMenu('[data-dropdown]');
+dropdown.init();
+
 initMenu();
 initData();
 fetchAnimais('../../animaisApi.json', '.numero-grid');
