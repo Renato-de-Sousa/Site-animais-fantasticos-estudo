@@ -11,6 +11,7 @@
   font-family: 'Playfair Display SC', serif;
   font-size: 2rem;
   margin-bottom: .5rem;
+  color: #222;
 }
 
 .numero-grid span{
@@ -23,5 +24,8 @@
 @media (max-width: 700px){
   .numero-grid{
     grid-column: 1;
+  }
+  .numero-grid h3{
+    font-size: 1.5em;
   }
 }
